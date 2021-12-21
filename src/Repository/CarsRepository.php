@@ -19,22 +19,18 @@ class CarsRepository extends ServiceEntityRepository
         parent::__construct($registry, Cars::class);
     }
 
-    // /**
-    //  * @return Cars[] Returns an array of Cars objects
-    //  */
-    /*
-    public function findByExampleField($value)
+    /**
+     * @return Cars[] Returns an array of Cars objects
+     */
+    public function find3first()
     {
         return $this->createQueryBuilder('c')
-            ->andWhere('c.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('c.id', 'ASC')
-            ->setMaxResults(10)
+            ->setMaxResults(3)
             ->getQuery()
             ->getResult()
         ;
     }
-    */
+
 
     /*
     public function findOneBySomeField($value): ?Cars

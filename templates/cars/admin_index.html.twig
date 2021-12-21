@@ -6,11 +6,11 @@
 <div class="container mt-4 mb-4">
     <h1>Cars</h1>
 
-    {% if message is defined %}
+    {% for message in app.flashes('success') %}
     <div class="alert alert-success">
         {{ message }}
     </div>
-    {% endif %}
+    {% endfor %}
 
     <table class="table">
         <thead>
