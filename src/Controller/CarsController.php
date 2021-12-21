@@ -71,9 +71,7 @@ class CarsController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->flush();
             $this->addFlash('success', 'New car successfully edited');
-            return $this->redirectToRoute('cars_index', [
-                'message' => 'Successfully edited!'
-            ], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('admin_cars_index', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('cars/edit.html.twig', [
@@ -90,6 +88,6 @@ class CarsController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('cars_index', [], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('admin_cars_index', [], Response::HTTP_SEE_OTHER);
     }
 }

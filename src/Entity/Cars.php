@@ -84,7 +84,7 @@ class Cars
         return $this;
     }
 
-    public function getPrice(): ?string
+    public function getPrice(): ?int
     {
         // $fmt = new NumberFormatter( 'en', NumberFormatter::CURRENCY );
         // return $fmt->formatCurrency($this->price, "USD")."\n";
