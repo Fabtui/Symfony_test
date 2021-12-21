@@ -10,19 +10,19 @@
           <a class="nav-link {% if current_menu is defined and current_menu == 'home' %}active{% endif %}" aria-current="page" href="{{ path('home') }}">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
+          <a class="nav-link {% if current_menu is defined and current_menu == 'cars_index' %}active{% endif %}" href="{{ path('cars_index') }}">Cars</a>
         </li>
-        <li class="nav-item">
+        {# <li class="nav-item">
           <a class="nav-link" href="#">Pricing</a>
-        </li>
+        </li> #}
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown link
+            Admin
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li><a class="dropdown-item" href="{{ path('cars_new') }}">New Car</a></li>
+            <li><a class="dropdown-item" href="{{ path('admin_cars_index') }}">Edit Cars</a></li>
+            {# <li><a class="dropdown-item" href="#">Something else here</a></li> #}
           </ul>
         </li>
       </ul>

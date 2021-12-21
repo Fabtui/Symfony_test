@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Cars{% endblock %}
+
+{% block body %}
+    <h1>Cars</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ car.id }}</td>
+            </tr>
+            <tr>
+                <th>Brand</th>
+                <td>{{ car.Brand }}</td>
+            </tr>
+            <tr>
+                <th>Model</th>
+                <td>{{ car.model }}</td>
+            </tr>
+            <tr>
+                <th>Color</th>
+                <td>{{ car.color }}</td>
+            </tr>
+            <tr>
+                <th>Price</th>
+                <td>{{ car.price }}</td>
+            </tr>
+            <tr>
+                <th>Sold</th>
+                <td>{{ car.sold ? 'Yes' : 'No' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('cars_index') }}">back to list</a>
+
+    <a href="{{ path('cars_edit', {'id': car.id}) }}">edit</a>
+
+    {{ include('cars/_delete_form.html.twig') }}
+{% endblock %}
